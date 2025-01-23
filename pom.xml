@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.elmakers.mine.bukkit.plugins</groupId>
+    <artifactId>MagicMigration</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>MagicMigration</name>
+    <description>Magic migration plugin</description>
+    <url>https://mine.elmakers.com</url>
+
+    <developers>
+        <developer>
+            <name>Nathan Wolf</name>
+            <email>nathan@elmakers.com</email>
+            <organization>elMakers</organization>
+            <organizationUrl>https://www.elmakers.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.java>21</version.java>
+        <bukkit.version>1.9.2-R0.1-SNAPSHOT</bukkit.version>
+        <nbt.version>2.14.1</nbt.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>elMakers</name>
+        <url>http://www.elmakers.com/</url>
+    </organization>
+
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://jenkins.elmakers.com</url>
+    </ciManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/elBukkit/MagicMigration.git</connection>
+        <developerConnection>scm:git:git@github.com:elBukkit/MagicMigration.git</developerConnection>
+        <url>https://github.com/elBukkit/MagicMigration</url>
+        <tag>main</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${version.java}</source>
+                    <target>${version.java}</target>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- Spigot -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+        <!-- NBT API -->
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${bukkit.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api-plugin</artifactId>
+            <version>${nbt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>

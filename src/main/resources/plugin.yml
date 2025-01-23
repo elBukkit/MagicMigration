@@ -1,0 +1,8 @@
+name: MagicMigration
+main: com.elmakers.mine.bukkit.migration.MagicMigrationPlugin
+version: 1.0
+api-version: 1.9
+author: NathanWolf
+description: A plugin to migrate Magic data on items to a new format
+depend:
+  - NBTAPI
